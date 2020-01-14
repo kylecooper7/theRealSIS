@@ -29,16 +29,16 @@ ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
 				
 				
 
-				
-				
-				
-				
-				
-				
-				
-				
-				
-    }
+			} //keep at 32
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -198,6 +198,11 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 				// Tanner - end 199
 		// Emily - Start 200 
+		 private void Syso()
+			{
+				System.out.println("Hi this is where the Submenu will be. ");
+
+			}                                                                                              
 		
 		
 		
@@ -266,12 +271,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-		
-		
-		
-		
-		
-				// Emily - end 274
+		// Emily - end 274
 		// Jon - Start 275
 		Scanner intInput = new Scanner(System.in);
 		
