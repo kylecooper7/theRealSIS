@@ -1,5 +1,5 @@
 package theRealSIS;
-
+import java.util.Scanner;
 
 public class SIS
 	{
@@ -7,8 +7,8 @@ public class SIS
 		public static void main(String[] args)
 			{
 				// TODO Auto-generated method stub
+			
 
-				
 				
 				
 				
@@ -30,7 +30,6 @@ public class SIS
 				
 				
 			}
-		
 		
 		
 		
@@ -274,10 +273,30 @@ public class SIS
 		
 				// Emily - end 274
 		// Jon - Start 275
+		Scanner intInput = new Scanner(System.in);
 		
+		int choice = intInput.nextInt();
 		
+		System.out.println("What would you like to do?"
+				+ "\n 1) add or delete a student"
+				+ "\n 2) change student grades/schedule"
+				+ "\n 3) sort students");
 		
+		if(choice == 1)
+		{
+			
+		}
+		else if(choice == 2)
+		{
+			
+		}
 		
+		else if(choice == 3)
+		{
+			
+		}
+
+			
 		
 		
 		
@@ -327,25 +346,5 @@ public class SIS
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-				// Jon - end 349
+	// Jon - end 349
 	}
