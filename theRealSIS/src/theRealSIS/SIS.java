@@ -1,11 +1,15 @@
 package theRealSIS;
-
+import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Period;
 import java.util.ArrayList;
+
+
+
+
 
 public class SIS
 	{
@@ -16,6 +20,7 @@ public class SIS
 ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
 				
 				
+
 				
 				
 				
@@ -33,28 +38,16 @@ ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
 				
 				
 				
-				
-				
-			}
+    }
 		
 		
 		
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		// Kyle - Start 50 
+	
+  
+  // Kyle - Start 50 
 		
 public static ArrayList<Student> fillStudentList(String fileName){
 	ArrayList<Student> studs = new ArrayList<Student>();
@@ -121,7 +114,14 @@ public static ArrayList<Student> fillStudentList(String fileName){
 
 
 		
-		// Kyle - end 124
+	
+  
+  
+  
+  
+  
+  
+ // Kyle - end 124
 		// Tanner - Start 125
 		
 		
@@ -273,10 +273,30 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 				// Emily - end 274
 		// Jon - Start 275
+		Scanner intInput = new Scanner(System.in);
 		
+		int choice = intInput.nextInt();
 		
+		System.out.println("What would you like to do?"
+				+ "\n 1) add or delete a student"
+				+ "\n 2) change student grades/schedule"
+				+ "\n 3) sort students");
 		
+		if(choice == 1)
+		{
+			
+		}
+		else if(choice == 2)
+		{
+			
+		}
 		
+		else if(choice == 3)
+		{
+			
+		}
+
+			
 		
 		
 		
@@ -326,25 +346,5 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-				// Jon - end 349
+	// Jon - end 349
 	}
