@@ -29,7 +29,7 @@ public class SIS
 				
 				
 				
-			}
+			} //keep at 32
 		
 		
 		
@@ -47,8 +47,7 @@ public class SIS
 		
 		
 		
-		
-		// Kyle - Start 50 
+				// Kyle - Start 50 
 		
 		
 		
@@ -199,7 +198,11 @@ public class SIS
 		
 				// Tanner - end 199
 		// Emily - Start 200 
-		
+		 private void Syso()
+			{
+				System.out.println("Hi this is where the Submenu will be. ");
+
+			}                                                                                              
 		
 		
 		
