@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Period;
 import java.util.ArrayList;
+
 
 
 
@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class SIS
 	{
-
+		static ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
 		public static void main(String[] args)
 			{
 				// TODO Auto-generated method stub
-ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
+
 				
 				
 
