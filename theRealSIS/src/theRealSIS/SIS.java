@@ -124,10 +124,10 @@ public static ArrayList<Student> fillStudentList(String fileName){
  // Kyle - end 124
 		// Tanner - Start 125
 		
-		
-		
-		
-		
+		public void byLastName()
+		{
+			LastNameSort.compare()
+		}
 		
 		
 		
