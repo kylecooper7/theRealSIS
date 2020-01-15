@@ -8,11 +8,11 @@ public class Student
 		private String lastName;
 		private ArrayList<Period> period;
 
-		public Student(String fN, String lN, ArrayList<Period> p)
+		public Student(String fN, String lN, ArrayList<Period> peds)
 			{
 				firstName = fN;
 				lastName = lN;
-				period = p;
+				period = peds;
 			}
 
 		public String getFirstName()
@@ -47,31 +47,31 @@ public class Student
 
 		public double getGPA()
 			{
-				double totalGrade = 0;
+				double totalGrade = 0.00;
 				for (Period p : period)
 					{
 						if (p.getLetterGrade().substring(0, 1).equals("A"))
 							{
-								totalGrade += 4.0;
+								totalGrade += 4.00;
 							} else if (p.getLetterGrade().substring(0, 1).equals("B"))
 							{
-								totalGrade += 3.0;
+								totalGrade += 3.00;
 							} else if (p.getLetterGrade().substring(0, 1).equals("C"))
 							{
-								totalGrade += 2.0;
+								totalGrade += 2.00;
 							} else if (p.getLetterGrade().substring(0, 1).equals("D"))
 							{
-								totalGrade += 1.0;
+								totalGrade += 1.00;
 							} else if (p.getLetterGrade().substring(0, 1).equals("F"))
 							{
-								totalGrade += 0.0;
+								totalGrade += 0.00;
 							}
 						if (p.getLetterGrade().substring(1, 2).equals("+"))
 							{
-								totalGrade += .3;
+								totalGrade += .30;
 							} else if (p.getLetterGrade().substring(1, 2).equals("-"))
 							{
-								totalGrade -= .3;
+								totalGrade -= .30;
 							}
 					}
 				return totalGrade / period.size();
