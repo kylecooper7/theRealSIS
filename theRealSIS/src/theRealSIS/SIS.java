@@ -196,20 +196,20 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-				// Tanner - end 199
+		// Tanner - end 199
 		// Emily - Start 200 
-		 private void Syso()
+      
+		public static void addStudents() 
 			{
-				System.out.println("Hi this is where the Submenu will be. ");
-
-			}                                                                                              
+			
+			
+			
+		    }
 		
-		
-		
-		
-		
-		
-		
+		public static void deleteStudent()
+			{
+			
+			}
 		
 		
 		
@@ -273,28 +273,82 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		// Emily - end 274
 		// Jon - Start 275
+	public static void mainAndSubMenu()
+	  {
 		Scanner intInput = new Scanner(System.in);
+		
+		
+		System.out.println("What would you like to do?" 
+							+ "\n (1) add or delete a student" 
+							+ "\n (2) change student grades/schedule"
+							+ "\n (3) sort students");
 		
 		int choice = intInput.nextInt();
 		
-		System.out.println("What would you like to do?"
-				+ "\n 1) add or delete a student"
-				+ "\n 2) change student grades/schedule"
-				+ "\n 3) sort students");
-		
 		if(choice == 1)
 		{
-			
+			System.out.println("Would you like to (1) add a student or (2) delete a student?");
+				Scanner userInput = new Scanner(System.in);
+					int addStudent = userInput.nextInt();
+					int deleteStudent = userInput.nextInt();
+				
+				if(addStudent == 1)
+					{
+						addStudents(); 
+					}
+				else if (deleteStudent == 2)
+					{
+						deleteStudent();
+					}
 		}
+		
 		else if(choice == 2)
 		{
-			
+			System.out.println("Would you like to"
+					           + "\n (a) change a student's grades?"
+					           + "\n OR"
+					           + "\n (b) switch a student's classes?");
+			Scanner changeInput = new Scanner(System.in);
+				String changeGrades = changeInput.nextLine();
+				String switchClasses = changeInput.nextLine();
+				
+			if(changeGrades.equals("a"))
+				{
+					changeGrades();
+				}
+			else if(switchClasses.equals("b"))
+				{
+					switchClasses();
+				}
 		}
 		
 		else if(choice == 3)
 		{
+			System.out.println("How would you like to sort your students?"
+					           + "\n (1) by last name"
+					           + "\n (2) by GPA"
+					           + "\n OR"
+					           + "\n (3) by period");
+			Scanner sortInput = new Scanner(System.in);
+				int byLastName = sortInput.nextInt();
+				int byGPA = sortInput.nextInt();
+				int byPeriod = sortInput.nextInt();
+				
+			if(byLastName == 1)
+				{
+					byLastName();
+				}
 			
+			else if(byGPA == 2)
+				{
+					byGPA();
+				}
+			else if(byPeriod == 3)
+				{
+					byPeriod();
+				}
 		}
+	  }
 
 			
 		
@@ -330,21 +384,18 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	// Jon - end 349
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// Jon - end 400
 	}
