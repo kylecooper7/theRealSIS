@@ -25,9 +25,9 @@ public class LastNameSort implements Comparator<Student>
 					} else if (method.equals("FirstName"))
 					{
 						return s1.getFirstName().compareTo(s2.getFirstName());
-					} else if (method.equals("Period"))
+					} else
 					{
-						return s1.getPeriod() - s2.getPeriod();
+						return s1.getPeriod(method).getPeriodNumber() - s2.getPeriod(method).getPeriodNumber();
 					}
 			}
 	}
