@@ -76,4 +76,17 @@ public class Student
 					}
 				return totalGrade / period.size();
 			}
+		public Period getPeriod(String n)
+		{
+			for (int i = 0; i < period.size(); i++)
+				{
+					if (period.get(i).getClassName().equals(n))
+						{
+							return period.get(i);
+						}
+					
+				}
+			return null;
+			
+		}
 	}
