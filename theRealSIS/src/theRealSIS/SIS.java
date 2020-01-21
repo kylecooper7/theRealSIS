@@ -22,8 +22,7 @@ public class SIS
 				
 
 				
-				
-				
+				byGPA();
 				
 				
 				
@@ -145,9 +144,9 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			displayStudents(listOfStuds);
 		}
 		
-		public static void displayStudents(ArrayList<Student>somethingRetarded)
+		public static void displayStudents(ArrayList<Student>something)
 		{
-			for(Student s : somethingRetarded)
+			for(Student s : something)
 				{
 					System.out.print(s.getFirstName());
 					System.out.print(" " + s.getLastName());
@@ -157,6 +156,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 							System.out.print(" " + p.getLetterGrade());
 							System.out.print(" P" + p.getPeriodNumber());
 						}
+					System.out.print(" " + s.getGPA());
 					System.out.println();
 				}
 			
