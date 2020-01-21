@@ -20,15 +20,15 @@ public class SIS
 
 				
 				
-
+			
+			
 				
 				
 				
 				
-				
-				
-				
-
+			
+			
+			
 			} //keep at 32
 		
 		
@@ -352,10 +352,15 @@ public static ArrayList<Student> fillStudentList(String fileName){
 
 			
 		
-		
-		
-		
-		
+	public static void changeGrades()
+	{
+		for(Student grades : listOfStuds)
+		{
+			System.out.println(grades.getGPA());
+		}
+	}
+	
+	
 		
 		
 		
@@ -385,11 +390,6 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 
-	
-	
-	
-	
-	
 	
 	
 	
