@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class SIS
 	{
+		static ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
 
 		public static void main(String[] args)
 			{
 				// TODO Auto-generated method stub
-ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
 				
 				
 
@@ -201,43 +201,26 @@ public static ArrayList<Student> fillStudentList(String fileName){
       
 		public static void addStudents() 
 			{
-				
+				for(int i = 0; i < listOfStuds.size(); i++)
+					{
+						System.out.println();
+					}
 				Scanner userInput = new Scanner(System.in);
 				String addStudentName = userInput.nextLine();
 				System.out.println("Please enter the new student's first and last name.");
 					
 				String firstPeriod = userInput.nextLine();
+				// first period choice 
 				System.out.println("What is " + addStudentName + "'s first period?"
 									+ "\n (a) Biology"
 									+ "\n (b) Algebra"
 									+ "\n (c) English");
-					
-					
-					
-				System.out.println("Now, what is " + addStudentName + "'s second period?");
-				
-				
-					
-					
-			
-			
-		    }//
+		    }
 		
 		public static void deleteStudent()
 			{
 			
 			}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
