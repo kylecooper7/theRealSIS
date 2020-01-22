@@ -5,9 +5,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-
 
 
 
@@ -99,7 +99,12 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-		
+	public static void formatColumns(String s, int colCount){
+		int numSpaces = colCount - s.length();
+	for(int i = 0; i < numSpaces; i++) {
+		System.out.print(" ");
+	}
+	}	
 		
 		
 		
@@ -111,19 +116,13 @@ public static ArrayList<Student> fillStudentList(String fileName){
 
 
 
-
-
-		
 	
-  
-  
   
   
   
   
   // Kyle - end 124
 		// Tanner - Start 125
-		
 		public static void byLastName()
 		{
 			Collections.sort(listOfStuds, new LastNameSort("LastName"));
@@ -144,26 +143,37 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			Collections.sort(listOfStuds, new LastNameSort(className));
 			displayStudents(listOfStuds);
 		}
-		
 		public static void displayStudents(ArrayList<Student>something)
 		{
+			int colCount = 10;
+			DecimalFormat decFor = new DecimalFormat("0.00");
+			int counter = 0;
 			for(Student s : something)
 				{
+				counter++;
+				String cheese = "" + counter + ".";
+				System.out.print(cheese);
+				formatColumns(cheese ,5);
+					//System.out.println();
+					String studentGPA = decFor.format(s.getGPA());
 					System.out.print(s.getFirstName());
+					formatColumns(s.getFirstName(), colCount);
 					System.out.print(" " + s.getLastName());
+					formatColumns(s.getLastName(), colCount);
 					for (Period p : s.getPeriod())
 						{
 							System.out.print(" " + p.getClassName());
+							formatColumns(p.getClassName(), colCount - 1);
 							System.out.print(" " + p.getLetterGrade());
+							formatColumns(p.getLetterGrade(), colCount - 1);
 							System.out.print(" P" + p.getPeriodNumber());
+							formatColumns("   ", colCount - 1);
 						}
-					System.out.print(" " + s.getGPA());
+					System.out.print(" " + studentGPA);
+					formatColumns("    ", colCount - 1);
 					System.out.println();
-				}
-			
-		}
-		
-		
+				}	
+		}	
 		public static void changeGrades() {
 			Scanner userInput = new Scanner(System.in);
 			Scanner userInput2 = new Scanner(System.in);
@@ -178,8 +188,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 					s.getPeriod().get(periodNum).setLetterGrade(grade);
 				}
 			}
-			displayStudents(listOfStuds);
-		}
+			displayStudents(listOfStuds);}
 public static void switchClasses() {
 	Scanner userInput = new Scanner(System.in);
 	Scanner userInput2 = new Scanner(System.in);
@@ -191,11 +200,8 @@ public static void switchClasses() {
 	String grade = userInput.nextLine();
 	for(Student s: listOfStuds) {
 		if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
-			s.getPeriod().get(periodNum).setLetterGrade(grade);
-		}
-	}
-	displayStudents(listOfStuds);		
-}
+			s.getPeriod().get(periodNum).setLetterGrade(grade);}}
+	displayStudents(listOfStuds);		}
 		// Tanner - end 199
 		// Emily - Start 200 
       
@@ -203,11 +209,11 @@ public static void switchClasses() {
 			{
 				
 				Scanner userInput = new Scanner(System.in);
-				
+				ArrayList<Period> perds = new ArrayList<Period>();
 				System.out.println("Please enter the new student's first and last name.");
 				String addStudentName = userInput.nextLine();
 				// first period code
-				
+				String[] studName = addStudentName.split(" ");
 				System.out.println("What is " + addStudentName + "'s first period?"
 									+ "\n (a) Biology"
 									+ "\n (b) Algebra"
@@ -215,18 +221,30 @@ public static void switchClasses() {
 				String firstPeriod = userInput.nextLine();
 				if(firstPeriod.equals("a")) // first period is Biology
 					{
+					String fP = "Biology";
+					System.out.println("What is " + addStudentName + "'s grade in " + fP + "?");
+					String fPGrade = userInput.nextLine();
+						perds.add(new Period(1, fPGrade, fP));
 						System.out.println("Now, what is " + addStudentName + "'s second period?"
 								+ "\n (a) Algebra"
 								+ "\n (b) English");
 					}
 				else if(firstPeriod.equals("b")) // first period is Algebra
 					{
+					String fP = "Algebra";
+					System.out.println("What is " + addStudentName + "'s grade in " + fP + "?");
+					String fPGrade = userInput.nextLine();
+					perds.add(new Period(1, fPGrade, fP));
 						System.out.println("Now, what is " + addStudentName + "'s second period?"
 								+ "\n (a) Biology"
 								+ "\n (b) English");
 					}
 				else if(firstPeriod.equals("c")) // first period is English 
 					{
+					String fP = "English";
+					System.out.println("What is " + addStudentName + "'s grade in " + fP + "?");
+					String fPGrade = userInput.nextLine();
+					perds.add(new Period(1, fPGrade, fP));
 						System.out.println("Now, what is " + addStudentName + "'s second period?"
 								+ "\n (a) Biology"
 								+ "\n (b) Algebra");	
@@ -237,54 +255,90 @@ public static void switchClasses() {
 			// if first period is Biology
 			if(firstPeriod.equals("a") && secondPeriod.equals("a")) // second period is Algebra
 				{
+				String sP = "Algebra";
+				System.out.println("What is " + addStudentName + "'s grade in " + sP + "?");
+				String sPGrade = userInput.nextLine();
+				perds.add(new Period(2, sPGrade, sP));
 					String thirdPeriod = new String("English"); // third period is English 
-					System.out.println("This is your new student:"
-										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod); 
+					System.out.println("What is " + addStudentName + "'s grade in " + thirdPeriod + "?");
+					String tPGrade = userInput.nextLine();
+					perds.add(new Period(3, tPGrade, thirdPeriod));
 				}
 			else if(firstPeriod.equals("a") && secondPeriod.equals("b")) // second period is English
 				{
+				String sP = "English";
+				System.out.println("What is " + addStudentName + "'s grade in " + sP + "?");
+				String sPGrade = userInput.nextLine();
+				perds.add(new Period(2, sPGrade, sP));
 					String thirdPeriod = new String("Algebra"); // third period is Algebra 
-					System.out.println("This is your new student:"
-										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+					System.out.println("What is " + addStudentName + "'s grade in " + thirdPeriod + "?");
+					String tPGrade = userInput.nextLine();
+					perds.add(new Period(3, tPGrade, thirdPeriod));
 				}
 			// if first period is Algebra
 			else if(firstPeriod.equals("b") && secondPeriod.equals("a")) // second period is Biology
-				{
+			{
+				String sP = "Biology";
+				System.out.println("What is " + addStudentName + "'s grade in " + sP + "?");
+				String sPGrade = userInput.nextLine();
+				perds.add(new Period(2, sPGrade, sP));
 					String thirdPeriod = new String("English"); // third period is English
-					System.out.println("This is your new student:"
-										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+					System.out.println("What is " + addStudentName + "'s grade in " + thirdPeriod + "?");
+					String tPGrade = userInput.nextLine();
+					perds.add(new Period(3, tPGrade, thirdPeriod));
 				}
 			else if(firstPeriod.equals("b") && secondPeriod.equals("b")) // second period is English
 				{
+				String sP = "English";
+				System.out.println("What is " + addStudentName + "'s grade in " + sP + "?");
+				String sPGrade = userInput.nextLine();
+				perds.add(new Period(2, sPGrade, sP));
 					String thirdPeriod = new String("Biology"); // third period is Biology
-					System.out.println("This is your new student:"
-										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+					System.out.println("What is " + addStudentName + "'s grade in " + thirdPeriod + "?");
+					String tPGrade = userInput.nextLine();
+					perds.add(new Period(3, tPGrade, thirdPeriod));
 				}
 			// if first period is English 
 			else if(firstPeriod.equals("c") && secondPeriod.equals("a")) // second period is Biology
 				{
+				String sP = "Biology";
+				System.out.println("What is " + addStudentName + "'s grade in " + sP + "?");
+				String sPGrade = userInput.nextLine();
+				perds.add(new Period(2, sPGrade, sP));
 					String thirdPeriod = new String("Algebra"); // third period is Algebra
-					System.out.println("This is your new student:"
-										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+					System.out.println("What is " + addStudentName + "'s grade in " + thirdPeriod + "?");
+					String tPGrade = userInput.nextLine();
+					perds.add(new Period(3, tPGrade, thirdPeriod));
 				}
-			else if(firstPeriod.equals("c") && secondPeriod.equals("b")) // second period is English 
+			else if(firstPeriod.equals("c") && secondPeriod.equals("b")) // second period is Algebra 
 				{
+				String sP = "Algebra";
+				System.out.println("What is " + addStudentName + "'s grade in " + sP + "?");
+				String sPGrade = userInput.nextLine();
+				perds.add(new Period(2, sPGrade, sP));
 					String thirdPeriod = new String("Biology"); // third period is Biology
-					System.out.println("This is your new student:"
-										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+					System.out.println("What is " + addStudentName + "'s grade in " + thirdPeriod + "?");
+					String tPGrade = userInput.nextLine();
+					perds.add(new Period(3, tPGrade, thirdPeriod));
 				}
 			//New class list with the added student created 
-	
+			
+	listOfStuds.add(new Student(studName[0], studName[1], perds));
+	System.out.println(addStudentName + " has been added to the student roster.");
+	displayStudents(listOfStuds);
 		    }
-		
+	
 		public static void deleteStudent()
 			{
 				System.out.println("Please type in the student's number you would like to remove from your class.");
 				Scanner deleteStudent = new Scanner(System.in);
+				displayStudents(listOfStuds);
 				int studentRemoved = deleteStudent.nextInt();
-				listOfStuds.remove(studentRemoved);
+				
+				listOfStuds.remove(studentRemoved - 1);
 				//New class list with the student removed 
-				System.out.println("This is your new class: " + listOfStuds);
+				System.out.println("This is your new class: ");
+				displayStudents(listOfStuds);
 			}
 		// Emily - end 289
 		// Jon - Start 290
