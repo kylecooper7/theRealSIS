@@ -19,12 +19,13 @@ public class SIS
 		public static void main(String[] args)
 			{
 				// TODO Auto-generated method stub
-
+//byGPA();
 				
 
 				
-				byGPA();
 				
+				
+			mainAndSubMenu();
 				
 				
 				
@@ -163,39 +164,38 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-  
+		public static void changeGrades() {
+			Scanner userInput = new Scanner(System.in);
+			Scanner userInput2 = new Scanner(System.in);
+			System.out.println("Student Name:");
+			String name = userInput.nextLine();
+			System.out.println("Period:");
+			int periodNum = userInput2.nextInt();
+			System.out.println("Change To:");
+			String grade = userInput.nextLine();
+			for(Student s: listOfStuds) {
+				if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
+					s.getPeriod().get(periodNum).setLetterGrade(grade);
+				}
+			}
+			displayStudents(listOfStuds);
+		}
+public static void switchClasses() {
+	Scanner userInput = new Scanner(System.in);
+	Scanner userInput2 = new Scanner(System.in);
+	System.out.println("Student Name:");
+	String name = userInput.nextLine();
+	System.out.println("Period:");
+	int periodNum = userInput2.nextInt();
+	System.out.println("Switch With");
+	String grade = userInput.nextLine();
+	for(Student s: listOfStuds) {
+		if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
+			s.getPeriod().get(periodNum).setLetterGrade(grade);
+		}
+	}
+	displayStudents(listOfStuds);		
+}
 		// Tanner - end 199
 		// Emily - Start 200 
       
@@ -203,15 +203,16 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			{
 				
 				Scanner userInput = new Scanner(System.in);
-				String addStudentName = userInput.nextLine();
-				System.out.println("Please enter the new student's first and last name.");
 				
+				System.out.println("Please enter the new student's first and last name.");
+				String addStudentName = userInput.nextLine();
 				// first period code
-				String firstPeriod = userInput.nextLine();
+				
 				System.out.println("What is " + addStudentName + "'s first period?"
 									+ "\n (a) Biology"
 									+ "\n (b) Algebra"
 									+ "\n (c) English");
+				String firstPeriod = userInput.nextLine();
 				if(firstPeriod.equals("a")) // first period is Biology
 					{
 						System.out.println("Now, what is " + addStudentName + "'s second period?"
@@ -273,8 +274,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
 				}
 			//New class list with the added student created 
-			int studentAdded = userInput.nextInt();
-			System.out.println("This is your new class list: " + studentAdded);
+	
 		    }
 		
 		public static void deleteStudent()
@@ -305,13 +305,13 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			System.out.println("Would you like to (1) add a student or (2) delete a student?");
 				Scanner userInput = new Scanner(System.in);
 					int addStudent = userInput.nextInt();
-					int deleteStudent = userInput.nextInt();
+				
 				
 				if(addStudent == 1)
 					{
 						addStudents(); 
 					}
-				else if (deleteStudent == 2)
+				else if (addStudent == 2)
 					{
 						deleteStudent();
 					}
@@ -325,13 +325,13 @@ public static ArrayList<Student> fillStudentList(String fileName){
 					           + "\n (b) switch a student's classes?");
 			Scanner changeInput = new Scanner(System.in);
 				String changeGrades = changeInput.nextLine();
-				String switchClasses = changeInput.nextLine();
+		
 				
 			if(changeGrades.equals("a"))
 				{
 					changeGrades();
 				}
-			else if(switchClasses.equals("b"))
+			else if(changeGrades.equals("b"))
 				{
 					switchClasses();
 				}
@@ -346,19 +346,18 @@ public static ArrayList<Student> fillStudentList(String fileName){
 					           + "\n (3) by period");
 			Scanner sortInput = new Scanner(System.in);
 				int byLastName = sortInput.nextInt();
-				int byGPA = sortInput.nextInt();
-				int byPeriod = sortInput.nextInt();
+				
 				
 			if(byLastName == 1)
 				{
 					byLastName();
 				}
 			
-			else if(byGPA == 2)
+			else if(byLastName == 2)
 				{
 					byGPA();
 				}
-			else if(byPeriod == 3)
+			else if(byLastName == 3)
 				{
 					System.out.println("What class name would you like to sort by?");
 					Scanner classInput = new Scanner(System.in);
