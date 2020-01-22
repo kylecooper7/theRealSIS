@@ -1,3 +1,4 @@
+
 package theRealSIS;
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -28,8 +29,7 @@ public class SIS
 				
 				
 				
-
-			} //keep at 32
+} //keep at 32
 		
 		
 		
@@ -37,6 +37,7 @@ public class SIS
 		
 		
 		
+  
 		
 		
 		
@@ -46,7 +47,6 @@ public class SIS
 		
 		
 	
-  
   // Kyle - Start 50 
 		
 public static ArrayList<Student> fillStudentList(String fileName){
@@ -121,7 +121,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
   
   
   
- // Kyle - end 124
+  // Kyle - end 124
 		// Tanner - Start 125
 		
 		public static void byLastName()
@@ -195,7 +195,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-		
+  
 		// Tanner - end 199
 		// Emily - Start 200 
       
@@ -229,6 +229,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 						System.out.println("Now, what is " + addStudentName + "'s second period?"
 								+ "\n (a) Biology"
 								+ "\n (b) Algebra");	
+          
 					}
 		// second and third period code
 			String secondPeriod = userInput.nextLine();
@@ -274,7 +275,6 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			//New class list with the added student created 
 			int studentAdded = userInput.nextInt();
 			System.out.println("This is your new class list: " + studentAdded);
-			
 		    }
 		
 		public static void deleteStudent()
