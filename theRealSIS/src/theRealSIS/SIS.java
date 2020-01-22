@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Period;
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 
 
@@ -18,18 +19,16 @@ public class SIS
 		public static void main(String[] args)
 			{
 				// TODO Auto-generated method stub
-				
-				
+			
+
 
 				
-				
-				
-				
-				
-				
-				
 
-			} //keep at 32
+      
+				
+				
+				
+		} //keep at 32
 		
 		
 		
@@ -124,6 +123,43 @@ public static ArrayList<Student> fillStudentList(String fileName){
  // Kyle - end 124
 		// Tanner - Start 125
 		
+		public static void byLastName()
+		{
+			Collections.sort(listOfStuds, new LastNameSort("LastName"));
+			displayStudents(listOfStuds);
+		}
+		public static void byFirstName()
+		{
+			Collections.sort(listOfStuds, new LastNameSort("FirstName"));
+			displayStudents(listOfStuds);
+		}
+		public static void byGPA()
+		{
+			Collections.sort(listOfStuds, new LastNameSort("GPA"));
+			displayStudents(listOfStuds);
+		}
+		public static void byPeriod(String className)
+		{
+			Collections.sort(listOfStuds, new LastNameSort(className));
+			displayStudents(listOfStuds);
+		}
+		
+		public static void displayStudents(ArrayList<Student>somethingRetarded)
+		{
+			for(Student s : somethingRetarded)
+				{
+					System.out.print(s.getFirstName());
+					System.out.print(" " + s.getLastName());
+					for (Period p : s.getPeriod())
+						{
+							System.out.print(" " + p.getClassName());
+							System.out.print(" " + p.getLetterGrade());
+							System.out.print(" P" + p.getPeriodNumber());
+						}
+					System.out.println();
+				}
+			
+		}
 		
 		
 		
@@ -149,44 +185,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		
 		
 		
@@ -345,57 +344,40 @@ public static ArrayList<Student> fillStudentList(String fileName){
 				}
 			else if(byPeriod == 3)
 				{
-					byPeriod();
+					System.out.println("What class name would you like to sort by?");
+					Scanner classInput = new Scanner(System.in);
+					String className = classInput.nextLine();
+					
+					byPeriod(className);
 				}
 		}
 	  }
 
 			
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
+	public static void changeGrades()
+	{
+		for(Student grades : listOfStuds)
+		{
+			System.out.println(grades.getGPA());
+		}
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	// Jon - end 400
 	}
