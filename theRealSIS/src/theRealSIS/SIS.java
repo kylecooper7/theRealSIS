@@ -1,3 +1,4 @@
+
 package theRealSIS;
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -15,20 +16,20 @@ import java.util.Collections;
 public class SIS
 	{
 		static ArrayList<Student> listOfStuds = fillStudentList("StudentInfo.txt");
-
 		public static void main(String[] args)
 			{
 				// TODO Auto-generated method stub
-			
-
 
 				
 
-      
 				
 				
 				
-		} //keep at 32
+				
+				
+				
+				
+} //keep at 32
 		
 		
 		
@@ -36,6 +37,7 @@ public class SIS
 		
 		
 		
+  
 		
 		
 		
@@ -45,7 +47,6 @@ public class SIS
 		
 		
 	
-  
   // Kyle - Start 50 
 		
 public static ArrayList<Student> fillStudentList(String fileName){
@@ -120,7 +121,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
   
   
   
- // Kyle - end 124
+  // Kyle - end 124
 		// Tanner - Start 125
 		
 		public static void byLastName()
@@ -194,84 +195,99 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		
 		
 		
-		
+  
 		// Tanner - end 199
 		// Emily - Start 200 
       
 		public static void addStudents() 
 			{
-				for(int i = 0; i < listOfStuds.size(); i++)
-					{
-						System.out.println();
-					}
+				
 				Scanner userInput = new Scanner(System.in);
 				String addStudentName = userInput.nextLine();
 				System.out.println("Please enter the new student's first and last name.");
-					
+				
+				// first period code
 				String firstPeriod = userInput.nextLine();
-				// first period choice 
 				System.out.println("What is " + addStudentName + "'s first period?"
 									+ "\n (a) Biology"
 									+ "\n (b) Algebra"
 									+ "\n (c) English");
+				if(firstPeriod.equals("a")) // first period is Biology
+					{
+						System.out.println("Now, what is " + addStudentName + "'s second period?"
+								+ "\n (a) Algebra"
+								+ "\n (b) English");
+					}
+				else if(firstPeriod.equals("b")) // first period is Algebra
+					{
+						System.out.println("Now, what is " + addStudentName + "'s second period?"
+								+ "\n (a) Biology"
+								+ "\n (b) English");
+					}
+				else if(firstPeriod.equals("c")) // first period is English 
+					{
+						System.out.println("Now, what is " + addStudentName + "'s second period?"
+								+ "\n (a) Biology"
+								+ "\n (b) Algebra");	
+          
+					}
+		// second and third period code
+			String secondPeriod = userInput.nextLine();
+			// if first period is Biology
+			if(firstPeriod.equals("a") && secondPeriod.equals("a")) // second period is Algebra
+				{
+					String thirdPeriod = new String("English"); // third period is English 
+					System.out.println("This is your new student:"
+										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod); 
+				}
+			else if(firstPeriod.equals("a") && secondPeriod.equals("b")) // second period is English
+				{
+					String thirdPeriod = new String("Algebra"); // third period is Algebra 
+					System.out.println("This is your new student:"
+										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+				}
+			// if first period is Algebra
+			else if(firstPeriod.equals("b") && secondPeriod.equals("a")) // second period is Biology
+				{
+					String thirdPeriod = new String("English"); // third period is English
+					System.out.println("This is your new student:"
+										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+				}
+			else if(firstPeriod.equals("b") && secondPeriod.equals("b")) // second period is English
+				{
+					String thirdPeriod = new String("Biology"); // third period is Biology
+					System.out.println("This is your new student:"
+										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+				}
+			// if first period is English 
+			else if(firstPeriod.equals("c") && secondPeriod.equals("a")) // second period is Biology
+				{
+					String thirdPeriod = new String("Algebra"); // third period is Algebra
+					System.out.println("This is your new student:"
+										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+				}
+			else if(firstPeriod.equals("c") && secondPeriod.equals("b")) // second period is English 
+				{
+					String thirdPeriod = new String("Biology"); // third period is Biology
+					System.out.println("This is your new student:"
+										+ addStudentName + firstPeriod + secondPeriod + thirdPeriod);
+				}
+			//New class list with the added student created 
+			int studentAdded = userInput.nextInt();
+			System.out.println("This is your new class list: " + studentAdded);
 		    }
 		
 		public static void deleteStudent()
 			{
-			
+				System.out.println("Please type in the student's number you would like to remove from your class.");
+				Scanner deleteStudent = new Scanner(System.in);
+				int studentRemoved = deleteStudent.nextInt();
+				listOfStuds.remove(studentRemoved);
+				//New class list with the student removed 
+				System.out.println("This is your new class: " + listOfStuds);
 			}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		// Emily - end 274
-		// Jon - Start 275
+		// Emily - end 289
+		// Jon - Start 290
 	public static void mainAndSubMenu()
 	  {
 		Scanner intInput = new Scanner(System.in);
@@ -355,29 +371,46 @@ public static ArrayList<Student> fillStudentList(String fileName){
 
 			
 		
-	public static void changeGrades()
-	{
-		for(Student grades : listOfStuds)
-		{
-			System.out.println(grades.getGPA());
-		}
-	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
 	
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
 	// Jon - end 400
 	}
