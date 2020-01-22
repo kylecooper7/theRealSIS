@@ -1,6 +1,8 @@
 package theRealSIS;
 
 import java.util.ArrayList;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class Student
 	{
@@ -47,6 +49,7 @@ public class Student
 
 		public double getGPA()
 			{
+				DecimalFormat d = new DecimalFormat("#.##");
 				double totalGrade = 0.00;
 				for (Period p : period)
 					{
@@ -66,27 +69,32 @@ public class Student
 							{
 								totalGrade += 0.00;
 							}
-						if (p.getLetterGrade().substring(1, 2).equals("+"))
+						if (p.getLetterGrade().length() > 1)
 							{
-								totalGrade += .30;
-							} else if (p.getLetterGrade().substring(1, 2).equals("-"))
-							{
-								totalGrade -= .30;
+								if (p.getLetterGrade().substring(1, 2).equals("+"))
+									{
+										totalGrade += .30;
+									} else if (p.getLetterGrade().substring(1, 2).equals("-"))
+									{
+										totalGrade -= .30;
+									}
 							}
 					}
-				return totalGrade / period.size();
+				String decimal = d.format(totalGrade / period.size());
+				return Double.parseDouble(decimal);
 			}
+
 		public Period getPeriod(String n)
-		{
-			for (int i = 0; i < period.size(); i++)
-				{
-					if (period.get(i).getClassName().equals(n))
-						{
-							return period.get(i);
-						}
-					
-				}
-			return null;
-			
-		}
+			{
+				for (int i = 0; i < period.size(); i++)
+					{
+						if (period.get(i).getClassName().equals(n))
+							{
+								return period.get(i);
+							}
+
+					}
+				return null;
+
+			}
 	}

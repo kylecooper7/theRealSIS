@@ -21,7 +21,7 @@ public class LastNameSort implements Comparator<Student>
 						return s1.getLastName().compareTo(s2.getLastName());
 					} else if (method.equals("GPA"))
 					{
-						return (int) ((s1.getGPA() - s2.getGPA()) * 100);
+						return (int) ((s2.getGPA() - s1.getGPA()) * 100);
 					} else if (method.equals("FirstName"))
 					{
 						return s1.getFirstName().compareTo(s2.getFirstName());
