@@ -92,9 +92,6 @@ public static ArrayList<Student> fillStudentList(String fileName){
 	
 	
 	
-	
-	
-	
 }		
 		
 		
@@ -110,6 +107,9 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			String s = userInput.nextLine();
 			if(s.contentEquals("")) {
 				mainAndSubMenu();
+			}
+			else {
+				System.exit(0);
 			}
 		}
 		
@@ -347,7 +347,6 @@ public static void switchClasses() {
 				menWho();
 				
 			}
-		
 		
 		
 		
