@@ -331,6 +331,10 @@ public static void switchClasses() {
 	listOfStuds.add(new Student(studName[0], studName[1], perds));
 	System.out.println(addStudentName + " has been added to the student roster.");
 	displayStudents(listOfStuds);
+	String s = userInput.nextLine();
+	if(s.contentEquals("")) {
+		mainAndSubMenu();
+	}
 		    }	
 		public static void deleteStudent()
 			{
@@ -342,15 +346,11 @@ public static void switchClasses() {
 				//New class list with the student removed 
 				System.out.println("This is your new class: ");
 				displayStudents(listOfStuds);
+				String s = deleteStudent.nextLine();
+				if(s.contentEquals("")) {
+					mainAndSubMenu();
+				}
 			}
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
