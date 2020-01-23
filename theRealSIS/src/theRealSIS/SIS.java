@@ -181,19 +181,17 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		public static void changeGrades() {
 			Scanner userInput = new Scanner(System.in);
 			Scanner userInput2 = new Scanner(System.in);
-			System.out.println("Student Name:");
-			String name = userInput.nextLine();
+			System.out.println("Please input the student's number:");
+			displayStudents(listOfStuds);
+			int num = userInput2.nextInt();
 			System.out.println("Period:");
 			int periodNum = userInput2.nextInt();
-			System.out.println("Change To:");
+			System.out.println("Change Grade To:");
 			String grade = userInput.nextLine();
-			for(Student s: listOfStuds) {
-				if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
-					s.getPeriod().get(periodNum).setLetterGrade(grade);
-				}
-				menWho();
+			listOfStuds.get(num - 1).getPeriod().get(periodNum - 1).setLetterGrade(grade);
+			System.out.println(listOfStuds.get(num - 1).getFirstName() + " " + listOfStuds.get(num - 1).getLastName() + "'s grade has been changed.");
+			displayStudents(listOfStuds);
 			}
-			displayStudents(listOfStuds);}
 public static void switchClasses() {
 	Scanner userInput = new Scanner(System.in);
 	Scanner userInput2 = new Scanner(System.in);
@@ -210,6 +208,8 @@ public static void switchClasses() {
 	menWho();	
 }
 	
+
+
 
 
 
