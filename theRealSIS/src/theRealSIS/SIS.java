@@ -114,7 +114,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		}
 		
 		public static void byPeriod() {
-			System.out.println("Please input period number to sort by:");
+			System.out.println("Please input a period number to sort by:");
 			Scanner deets = new Scanner(System.in);
 			String s = deets.nextLine();
 			Collections.sort(listOfStuds, new LastNameSort("Period " + s));
