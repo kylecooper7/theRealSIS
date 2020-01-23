@@ -335,9 +335,9 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		    }	
 		public static void deleteStudent()
 			{
+			displayStudents(listOfStuds);
 				System.out.println("Please type in the student's number you would like to remove from your class.");
 				Scanner deleteStudent = new Scanner(System.in);
-				displayStudents(listOfStuds);
 				int studentRemoved = deleteStudent.nextInt();
 				listOfStuds.remove(studentRemoved - 1);
 				//New class list with the student removed 
