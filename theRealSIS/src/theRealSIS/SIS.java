@@ -206,10 +206,9 @@ public static void switchClasses() {
 		if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
 			s.getPeriod().get(periodNum).setLetterGrade(grade);}}
 	displayStudents(listOfStuds);		
-	menWho();	
+	menWho();
 }
 	
-
 
 
 
