@@ -107,19 +107,19 @@ public static ArrayList<Student> fillStudentList(String fileName){
 	}	
 		
 		
-		
+		public static void menWho() {
+			Scanner userInput = new Scanner(System.in);
+			String s = userInput.nextLine();
+			if(s.contentEquals("")) {
+				mainAndSubMenu();
+			}
+		}
 		
 		
 		
 		
 		
 
-
-
-	
-  
-  
-  
   
   // Kyle - end 124
 		// Tanner - Start 125
@@ -127,21 +127,25 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		{
 			Collections.sort(listOfStuds, new LastNameSort("LastName"));
 			displayStudents(listOfStuds);
+			menWho();
 		}
 		public static void byFirstName()
 		{
 			Collections.sort(listOfStuds, new LastNameSort("FirstName"));
 			displayStudents(listOfStuds);
+			menWho();
 		}
 		public static void byGPA()
 		{
 			Collections.sort(listOfStuds, new LastNameSort("GPA"));
 			displayStudents(listOfStuds);
+			menWho();
 		}
 		public static void byPeriod(String className)
 		{
 			Collections.sort(listOfStuds, new LastNameSort(className));
 			displayStudents(listOfStuds);
+			menWho();
 		}
 		public static void displayStudents(ArrayList<Student>something)
 		{
@@ -187,6 +191,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 				if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
 					s.getPeriod().get(periodNum).setLetterGrade(grade);
 				}
+				menWho();
 			}
 			displayStudents(listOfStuds);}
 public static void switchClasses() {
@@ -201,15 +206,10 @@ public static void switchClasses() {
 	for(Student s: listOfStuds) {
 		if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
 			s.getPeriod().get(periodNum).setLetterGrade(grade);}}
-	displayStudents(listOfStuds);		}
+	displayStudents(listOfStuds);		
+	menWho();	
+}
 	
-
-
-
-
-
-
-
 
 
 
@@ -331,10 +331,7 @@ public static void switchClasses() {
 	listOfStuds.add(new Student(studName[0], studName[1], perds));
 	System.out.println(addStudentName + " has been added to the student roster.");
 	displayStudents(listOfStuds);
-	String s = userInput.nextLine();
-	if(s.contentEquals("")) {
-		mainAndSubMenu();
-	}
+	menWho();
 		    }	
 		public static void deleteStudent()
 			{
@@ -346,11 +343,14 @@ public static void switchClasses() {
 				//New class list with the student removed 
 				System.out.println("This is your new class: ");
 				displayStudents(listOfStuds);
-				String s = deleteStudent.nextLine();
-				if(s.contentEquals("")) {
-					mainAndSubMenu();
-				}
+				menWho();
+				
 			}
+		
+		
+		
+		
+		
 		
 		
 		
