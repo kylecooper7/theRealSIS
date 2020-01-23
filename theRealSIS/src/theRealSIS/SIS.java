@@ -105,8 +105,6 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		System.out.print(" ");
 	}
 	}	
-		
-		
 		public static void menWho() {
 			Scanner userInput = new Scanner(System.in);
 			String s = userInput.nextLine();
@@ -123,11 +121,6 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			displayStudents(listOfStuds);
 			menWho();
 		}
-		
-		
-		
-
-  
   // Kyle - end 124
 		// Tanner - Start 125
 		public static void byLastName()
