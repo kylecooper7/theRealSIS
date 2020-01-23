@@ -193,21 +193,21 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			displayStudents(listOfStuds);
 			menWho();
 			}
-public static void switchClasses() {
-	Scanner userInput = new Scanner(System.in);
-	Scanner userInput2 = new Scanner(System.in);
-	System.out.println("Student Name:");
-	String name = userInput.nextLine();
-	System.out.println("Period:");
-	int periodNum = userInput2.nextInt();
-	System.out.println("Switch With");
-	String grade = userInput.nextLine();
-	for(Student s: listOfStuds) {
-		if((s.getFirstName() + " " +s.getLastName()).equals(name)) {
-			s.getPeriod().get(periodNum).setLetterGrade(grade);}}
-	displayStudents(listOfStuds);		
-	menWho();
-}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 
 
@@ -445,12 +445,32 @@ public static void switchClasses() {
 		}
 	  }
 
-			
+	public static void switchClasses() {
+		Scanner userInput = new Scanner(System.in);
+		Scanner userInput2 = new Scanner(System.in);
+		displayStudents(listOfStuds);
+		System.out.println();
+		System.out.println("Please input the student's number");
+		int numOfStudent = userInput.nextInt();
+		System.out.println("Please enter the period you want to switch:");
+		int periodNum = userInput2.nextInt();
+		System.out.println("Enter the period you want to switch it with:");
+		int switchedPeriod = userInput.nextInt();
+		Period whichPeriod = new Period(periodNum, listOfStuds.get(numOfStudent - 1).getPeriod().get(periodNum - 1).getLetterGrade(), listOfStuds.get(numOfStudent - 1).getPeriod().get(periodNum - 1).getClassName());
+		String switchedClass = listOfStuds.get(numOfStudent - 1).getPeriod().get(switchedPeriod - 1).getClassName();
+		String switchedGrade = listOfStuds.get(numOfStudent - 1).getPeriod().get(switchedPeriod - 1).getLetterGrade();
+		listOfStuds.get(numOfStudent - 1).getPeriod().get(switchedPeriod - 1).setClassName(listOfStuds.get(numOfStudent - 1).getPeriod().get(periodNum - 1).getClassName());
+		listOfStuds.get(numOfStudent - 1).getPeriod().get(switchedPeriod - 1).setLetterGrade(listOfStuds.get(numOfStudent - 1).getPeriod().get(periodNum - 1).getLetterGrade());
+		listOfStuds.get(numOfStudent - 1).getPeriod().get(periodNum - 1).setClassName(switchedClass);
+		listOfStuds.get(numOfStudent - 1).getPeriod().get(periodNum - 1).setLetterGrade(switchedGrade);
+		displayStudents(listOfStuds);		
+		menWho();
+	}
 		
 		
 		
 		
-		
+
 		
 		
 		
