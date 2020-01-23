@@ -25,16 +25,10 @@ public class LastNameSort implements Comparator<Student>
 					} else if (method.equals("FirstName"))
 					{
 						return s1.getFirstName().compareTo(s2.getFirstName());
-					} else if (method.equals("Period 1"))
+					} else if (method.length() > 7 && method.substring(0, 7).equals("Period "))
 					{
 						return s1.getPeriod().get(Integer.parseInt(method.substring(7)) - 1).getClassName().compareTo(s2.getPeriod().get(Integer.parseInt(method.substring(7)) - 1).getClassName());
-					} else if (method.equals("Period 2"))
-					{
-						return s1.getPeriod().get(Integer.parseInt(method.substring(7)) - 1).getClassName().compareTo(s2.getPeriod().get(Integer.parseInt(method.substring(7)) - 1).getClassName());
-					} else if (method.equals("Period 3"))
-					{
-						return s1.getPeriod().get(Integer.parseInt(method.substring(7)) - 1).getClassName().compareTo(s2.getPeriod().get(Integer.parseInt(method.substring(7)) - 1).getClassName());
-					} else
+					}else
 					{
 						return s1.getPeriod(method).getPeriodNumber() - s2.getPeriod(method).getPeriodNumber();
 					}
