@@ -105,8 +105,6 @@ public static ArrayList<Student> fillStudentList(String fileName){
 		System.out.print(" ");
 	}
 	}	
-		
-		
 		public static void menWho() {
 			Scanner userInput = new Scanner(System.in);
 			String s = userInput.nextLine();
@@ -115,12 +113,14 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			}
 		}
 		
-		
-		
-		
-		
-
-  
+		public static void byPeriod() {
+			System.out.println("Please input period number to sort by:");
+			Scanner deets = new Scanner(System.in);
+			String s = deets.nextLine();
+			Collections.sort(listOfStuds, new LastNameSort("Period " + s));
+			displayStudents(listOfStuds);
+			menWho();
+		}
   // Kyle - end 124
 		// Tanner - Start 125
 		public static void byLastName()
@@ -141,7 +141,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			displayStudents(listOfStuds);
 			menWho();
 		}
-		public static void byPeriod(String className)
+		public static void byClassName(String className)
 		{
 			Collections.sort(listOfStuds, new LastNameSort(className));
 			displayStudents(listOfStuds);
@@ -412,8 +412,8 @@ public static void switchClasses() {
 			System.out.println("How would you like to sort your students?"
 					           + "\n (1) by last name"
 					           + "\n (2) by GPA"
-					           + "\n OR"
-					           + "\n (3) by period");
+					           + "\n (3) by class name"
+					           + "\n (4) by period");
 			Scanner sortInput = new Scanner(System.in);
 				int byLastName = sortInput.nextInt();
 				
@@ -433,8 +433,15 @@ public static void switchClasses() {
 					Scanner classInput = new Scanner(System.in);
 					String className = classInput.nextLine();
 					
-					byPeriod(className);
+					byClassName(className);
 				}
+			else if(byLastName == 4)
+			{
+				byPeriod();
+				
+				
+			}
+			
 		}
 	  }
 
