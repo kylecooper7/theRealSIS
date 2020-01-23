@@ -191,6 +191,7 @@ public static ArrayList<Student> fillStudentList(String fileName){
 			listOfStuds.get(num - 1).getPeriod().get(periodNum - 1).setLetterGrade(grade);
 			System.out.println(listOfStuds.get(num - 1).getFirstName() + " " + listOfStuds.get(num - 1).getLastName() + "'s grade has been changed.");
 			displayStudents(listOfStuds);
+			menWho();
 			}
 public static void switchClasses() {
 	Scanner userInput = new Scanner(System.in);
